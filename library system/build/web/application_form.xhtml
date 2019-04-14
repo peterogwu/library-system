@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:h="http://xmlns.jcp.org/jsf/html"
+xmlns:p="http://primefaces.org/ui"
+xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+<title>Add a book</title>
+<style>
+#form-div{
+width: 50%;
+margin: auto;
+background-color: background;
+}
+#form-inside{
+width: 50%;
+margin: auto;
+background-color: aliceblue;
+}
+input{
+width: 90%;
+margin: auto;
+}
+</style>
+</h:head>
+<h:body>
+<div id="form-div">
+<h:form>
+<div id="form-inside">
+
+
+<center>
+<fieldset>
+<legend>Add New Book to Your Library </legend>
+<div><br/>
+<p:outputLabel value="BOOK ID " for="id" /> <br/>
+<p:inputText disabled="true" a:autofocus="true" id="id" value="#{bookBean.id}" a:placeholder="Book Id" required="false" />
+</div>
+<br/>
+
+
+<div><br/>
+<p:outputLabel value="TITLE :" for="title" /> <br/>
+<p:inputText a:autofocus="true" id="title" value="#{bookBean.title}" a:placeholder="Book title" required="true" />
+</div>
+<br/>
+
+
+<div >
+<p:outputLabel value="AUTHOR: " for="author" /> <br/>
+<p:inputText id="author" value="#{bookBean.author}" a:placeholder="Phone author"  required="true" />
+</div>
+<br/>
+
+
+
+<div >
+<p:outputLabel value="ISBN: " for="isbn" /> <br/>
+<p:inputText id="isbn" value="#{bookBean.isbn}" a:placeholder=" isbn" required="true" />
+</div>
+<br/>
+
+
+
+<div >
+<p:outputLabel value="PUBLISHER: " for="publisher" /> <br/>
+<p:inputText id="publisher" value="#{bookBean.publisher}" a:placeholder="publisher" required="true" />
+</div>
+<br/>
+
+
+
+<div >
+<p:outputLabel value="COUNTRY: " for="country" /> <br/>
+<p:inputText id="country" value="#{bookBean.country}" a:placeholder="country" required="true" />
+</div>
+<br/>
+
+
+<div >
+
+<h:outputLabel for="sex" value="CHOOSE SEX"/>
+<p:selectOneMenu id="sex" label="Choose Sex" value="#{bookBean.sex}">
+<f:selectItem itemLabel="Select One" itemValue="" />
+<f:selectItem itemLabel="Male" itemValue="Male"/>
+<f:selectItem itemLabel="Female" itemValue="Female"/>
+</p:selectOneMenu>
+    
+</div>
+<br/>
+
+
+
+
+
+
+
+<span style="margin-left: 1px;">
+<p:commandButton value="Add" action="#{bookBean.save()}"/>
+</span>
+
+
+
+<span style="margin-left: 1px;">
+<p:commandButton value="Update" action="#{bookBean.update()}"/>
+</span>
+
+
+<span style="margin-left: 1px;">
+<p:commandButton value="Delete" action="#{bookBean.delete()}"/>
+</span>
+
+
+
+
+</fieldset>
+</center>
+
+</div>
+</h:form>
+</div>
+</h:body>
+</html>
+
